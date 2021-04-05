@@ -27,38 +27,38 @@ double recursivePower(double first,double second){
 
 double evaluate (char* expression, int* status){
     char operators[10] = "+ - * / ^";
-    printf("Please work");
     char *token = strtok(expression, " ");
-    printf("Hello again.");
+    double answer;
+    
     while(token) {
-        printf("Hello");
-        if (strtok(operators, token)) {
+        if (strstr(operators, token)) {
             node *num1node = pop();
             node *num2node = pop();
             double firstnum = num1node->value;
             double secondnum = num2node->value;
+            printf(" %f %f ", firstnum, secondnum);
+
             switch (*token) {
-                double answer;
                 case '+':
                     answer = firstnum + secondnum;
                     push(createNode(answer, NUMBER));
-                    return answer;
+
                 case '*':
                     answer = firstnum * secondnum;
                     push(createNode(answer, NUMBER));
-                    return answer;
+
                 case '-':
                     answer = firstnum - secondnum;
                     push(createNode(answer, NUMBER));
-                    return answer;
+
                 case '/':
                     answer = firstnum / secondnum;
                     push(createNode(answer, NUMBER));
-                    return answer;
+
                 case '^':
                     answer = recursivePower(firstnum, secondnum);
                     push(createNode(answer, NUMBER));
-                    return answer;
+
                 default:
                     break;
             }
@@ -69,7 +69,6 @@ double evaluate (char* expression, int* status){
         }
             token = strtok(NULL, " ");
     }
-
 }
 
 
