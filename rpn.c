@@ -9,6 +9,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct node {
+    double value;
+    int type;
+    struct node *next;
+};
+
 double recursivePower(double first,double second){
     if(second == 0){
         return 1;
@@ -20,15 +26,18 @@ double recursivePower(double first,double second){
 }
 
 double evaluate (char* expression, int* status){
-    char operators[] = "+ - * / ^";
+    char operators[10] = "+ - * / ^";
+    printf("Please work");
     char *token = strtok(expression, " ");
+    printf("Hello again.");
     while(token) {
-        /**if(strtok(operators, token)){
-            node* num1node = pop();
-            node* num2node = pop();
-            double firstnum = num1node -> value;
-            double secondnum = num2node -> value;
-            switch(*token) {
+        printf("Hello");
+        if (strtok(operators, token)) {
+            node *num1node = pop();
+            node *num2node = pop();
+            double firstnum = num1node->value;
+            double secondnum = num2node->value;
+            switch (*token) {
                 double answer;
                 case '+':
                     answer = firstnum + secondnum;
@@ -54,16 +63,13 @@ double evaluate (char* expression, int* status){
                     break;
             }
 
-        }**/
-
-        node *new = createNode(strtod(token, NULL), NUMBER);
-        push(new);
-        node *num1node = pop();
-        node *num2node = pop();
-        printf(" %p %p ", num1node, num2node);
-
-        token = strtok(NULL, " ");
+        } else {
+            node *new = createNode(strtod(token, NULL), NUMBER);
+            push(new);
+        }
+            token = strtok(NULL, " ");
     }
+
 }
 
 
