@@ -12,31 +12,34 @@
 int main(){
     int status = 0;
 
-    char expression1[ ] = {"24.2 12"};
-    /**char expression2[ ] = {"+"};
-    char expression3[ ] = {"17 22 / 4 * 16 -"};
-    char expression4[ ] = {"2 8 ^ 3 /"};
-    char expression5[ ] = {"17 22 33 / 4 + 2"};
-    char expression6[ ] = {""};
-    char expression7[ ] = {"8 7 + 6 - 5 / 4 * 3 ^"}; **/
-    printf("fjilsajf\n");
+    char test1[ ] = {"24.2 12 / 3 / 17 + +"};
+    char test2[ ] = {"+"};
+    char test3[ ] = {"17 22 / 4 * 16 -"};
+    char test4[ ] = {"2 8 ^ 3 /"};
+    char test5[ ] = {"17 22 33 / 4 + 2"};
+    char test6[ ] = {""};
+    char test7[ ] = {"8 7 + 6 - 5 / 4 * 3 ^"};
 
-    double result1 = evaluate(expression1, &status);
-   /** double result2 = evaluate(expression2, &status);
-    double result3 = evaluate(expression3, &status);
-    double result4 = evaluate(expression4, &status);
-    double result5 = evaluate(expression5, &status);
-    double result6 = evaluate(expression6, &status);
-    double result7 = evaluate(expression7, &status);**/
 
-    printf("%.2f is the answer to first expression \n", result1);
-    /**
-    printf("%f is the answer to second expression \n", result2);
-    printf("%f is the answer to third expression \n", result3);
-    printf("%f is the answer to fourth expression \n", result4);
-    printf("%f is the answer to fifth expression \n", result5);
-     **/
+    double one = evaluate(test1, &status);
+    double two = evaluate(test2, &status);
+    double three = evaluate(test3, &status);
+    double four = evaluate(test4, &status);
+    double five = evaluate(test5, &status);
+    double six = evaluate(test6, &status);
+    double seven = evaluate(test7, &status);
+
+
+    printf("\n1:%.2f\n", one);
+    printf("2:\n",  two);
+    printf("3:\n", three);
+    printf("4:\n", four);
+    printf("5:\n", five);
+    printf("6:\n", six);
+    printf("7:\n", seven);
+
 
 }
+
 
 
